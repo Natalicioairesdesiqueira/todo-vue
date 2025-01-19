@@ -1,6 +1,7 @@
 <script setup>
 import { reactive } from 'vue';
-import Cabecalho from './components/cabecalho.vue';
+
+import cabecalho from './components/cabecalho.vue';
 import Formulario from './components/Formulario.vue';
 import ListaDeTarefas from './components/ListaDeTarefas.vue';
 
@@ -56,7 +57,7 @@ const cadastraTarefa = () => {
 
 <template>
 <div class="container">
-  <Cabecalho :tarefas-pendentes="getTarefasPendentes().length" />
+  <cabecalho :tarefas-pendentes="getTarefasPendentes().length" />
   <Formulario :trocar-filtro="evento => estado.filtro = evento.target.value" :tarefadigi="estado.tarefadigi" :edita-tarefadigi="evento => estado.tarefadigi = evento.target.value" :cadastra-tarefa="cadastraTarefa"/>
   <ListaDeTarefas :tarefas="getTarefasFiltradas()" />
   
